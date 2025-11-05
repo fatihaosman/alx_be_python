@@ -1,4 +1,4 @@
 hours = 2 # number of hours
-seconds = 3600 # number of seconds in one hour
-seconds= hours * seconds
+# because 1 hour is 3600 seconds
+seconds= hours * 3600
 print( hours, "hour(s) is:", seconds ,"seconds")
