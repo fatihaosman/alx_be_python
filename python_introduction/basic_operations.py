@@ -1,16 +1,16 @@
-num1 = 10 
-num2 = 5
+number1 = 10 
+number2 = 5
 
 # perform the difference and store the result
-difference = num1 - num2
+difference = number1 - number2
 # Perform the addition and store the result
-sum = num1 + num2
+sum = number1 + number2
 # perform the product and store the result
-product = num1 * num2
+product = number1 * number2
 
-print("The sum of", num1, "and", num2, "is", sum)
-print("The difference between", num1, "and", num2, "is", difference)
-print("The product of", num1, "and", num2, "is", product)
+print("The sum of", number1, "and", number2, "is", sum)
+print("The difference between", number1, "and", number2, "is", difference)
+print("The product of", number1, "and", number2, "is", product)
 
 
 
