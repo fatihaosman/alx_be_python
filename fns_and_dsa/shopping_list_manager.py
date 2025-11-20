@@ -42,7 +42,7 @@ def main():
         choice = input("Enter your choice: ")
 
         if choice == '1':  # Add Item
-            new_item = input("Add an item to the list: ")
+            new_item = input("Enter the item to add: ")
             if new_item in shopping_list:
                 print(f"{new_item} is already in the list.")
             else:
@@ -50,7 +50,7 @@ def main():
                 print(f"{new_item} item was added to the list.")
 
         elif choice == '2':  # Remove Item
-            remove_item = input("Remove an item from the list: ")
+            remove_item = input("Enter the item to remove: ")
             if remove_item in shopping_list:
                 shopping_list.remove(remove_item)
                 print(f"{remove_item} has been removed.")
