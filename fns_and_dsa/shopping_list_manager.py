@@ -7,7 +7,7 @@ new_item = input("Add an item to the list:")
 if new_item in shopping_list:
   print(f"{new_item} was not found in the list.")
 else:
-  shopping_list(new_item)
+  shopping_list.append(new_item)
   print(f"{new_item} item was added to the list.")
   
   
