@@ -33,52 +33,66 @@
 
 
 
-# Define a Book class that stores details about a single book
+# This class represents a single book object
 class Book:
     def __init__(self, title, author):
-        # Each book has a title and an author's name
+        # Each book has a title and author
         self.title = title
         self.author = author
+        # Track if the book is checked out or not
+        self.is_checked_out = False
+
+    def check_out(self):
+        """Mark the book as checked out."""
+        self.is_checked_out = True
+
+    def return_book(self):
+        """Mark the book as returned."""
+        self.is_checked_out = False
 
 
-# Define a Library class that manages many books
+# This class manages a collection of book objects
 class Library:
     def __init__(self):
-        # List of books currently available in the library
+        # List to store available books
         self.books = []
-        
-        # List of books currently checked out by users
+        # List to store checked-out books
         self.checked_out_books = []
 
-    # Add a new book object into the library
     def add_book(self, book):
+        """Add a Book object to the library."""
         self.books.append(book)
 
-    # Checkout a book by searching for its title
     def check_out_book(self, title):
-        # Loop through all available books
+        """
+        Find the book by title.
+        Remove it from available books.
+        Add it to checked-out books.
+        Mark the book as checked out.
+        """
         for book in self.books:
             if book.title == title:
-                # Remove the book from available list
+                book.check_out()  # mark it checked out
                 self.books.remove(book)
-                # Add it to checked-out list
                 self.checked_out_books.append(book)
-                return True   # Checkout successful
-        return False  # Book not found
+                return True
+        return False
 
-    # Return a book back to the library
     def return_book(self, title):
-        # Loop through checked-out books
+        """
+        Find the book by title in checked-out list.
+        Move it back to available books.
+        Mark it as returned.
+        """
         for book in self.checked_out_books:
             if book.title == title:
-                # Remove from checked-out list
+                book.return_book()  # mark it returned
                 self.checked_out_books.remove(book)
-                # Put back into available books list
                 self.books.append(book)
-                return True   # Return successful
-        return False  # Book was not checked out
+                return True
+        return False
 
-    # Display all books currently available
     def list_available_books(self):
+        """Print all books that are NOT checked out."""
         for book in self.books:
             print(f"{book.title} by {book.author}")
